@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abon Pindang - Rasa Autentik Nusantara</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #e67e22;
+            --dark-color: #7e5109;
+            --light-color: #fdebd0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/736x/9b/09/85/9b09856f25a9cb82b2323563446b9383.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .price-tag {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary-color);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(211, 84, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(211, 84, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(211, 84, 0, 0);
+            }
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Abon <span class="highlight-text">Pindang</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <!-- Hero Section -->
+<section class="hero-section" id="home">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Abon Pindang <span class="highlight-text">Autentik</span></h1>
+                <p class="lead mb-4">Rasa gurih khas pindang yang diolah menjadi abon lezat, cocok untuk lauk sehari-hari atau camilan sehat keluarga.</p>
+                <div class="d-flex gap-3">
+                    <a href="#products" class="btn btn-primary btn-lg px-4">Beli Sekarang</a>
+                    <a href="#about" class="btn btn-outline-light btn-lg px-4">Pelajari Lebih</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block ps-lg-4">
+                <img src="https://i.pinimg.com/736x/9b/09/85/9b09856f25a9cb82b2323563446b9383.jpg" 
+                     alt="Abon Pindang" 
+                     class="img-fluid rounded shadow"
+                     style="max-height: 380px; width: 105%; object-fit: cover; margin-left: 5%;">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container py-5">
+            <h2 class="section-title">Kenapa Memilih <span class="highlight-text">Abon Pindang</span> Kami?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h3>Bahan Berkualitas</h3>
+                        <p>Dibuat dari ikan pindang pilihan dengan proses seleksi ketat untuk memastikan kualitas terbaik.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Tanpa Pengawet</h3>
+                        <p>100% alami tanpa bahan pengawet, pewarna, atau MSG tambahan. Aman untuk seluruh keluarga.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Sehat & Bergizi</h3>
+                        <p>Kaya protein dan omega-3 dari ikan pindang, baik untuk pertumbuhan dan kesehatan jantung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container py-5">
+            <h2 class="section-title">Produk <span class="highlight-text">Kami</span></h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="./foto/ori.png" class="card-img-top product-img" alt="Abon Pindang Original">
+                        <div class="card-body">
+                            <h5 class="card-title">Abon Pindang Original</h5>
+                            <p class="card-text">Rasa original dengan cita rasa gurih alami ikan pindang yang khas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-tag">Rp 12.000</span>
+                                <span class="badge bg-secondary">NETTO 50g</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="./foto/pedas.png" class="card-img-top product-img" alt="Abon Pindang Pedas">
+                        <div class="card-body">
+                            <h5 class="card-title">Abon Pindang Pedas</h5>
+                            <p class="card-text">Perpaduan gurih ikan pindang dengan sensasi pedas yang menggugah selera.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-tag">Rp 15.000</span>
+                                <span class="badge bg-secondary">NETTO 50g</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="./foto/balado.png" class="card-img-top product-img" alt="Abon Pindang Balado">
+                        <div class="card-body">
+                            <h5 class="card-title">Abon Pindang Balado</h5>
+                            <p class="card-text">Rasa balado khas Padang yang nikmat dipadukan dengan abon pindang.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-tag">Rp 15.000</span>
+                                <span class="badge bg-secondary">NETTO 50g</span>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light" id="testimonials">
+        <div class="container py-5">
+            <h2 class="section-title">Apa Kata <span class="highlight-text">Pelanggan</span> Kami?</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Testimonial 1" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Sarah Wijaya</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Abon Pindang ini menjadi favorit keluarga saya. Anak-anak sangat suka dan kandungan gizinya membuat saya tenang memberikannya setiap hari."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Testimonial 2" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Budi Santoso</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Sebagai orang yang sibuk, Abon Pindang sangat praktis untuk stok lauk di rumah. Rasanya enak dan tahan lama."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Testimonial 3" class="testimonial-img me-3">
+                            <div>
+                                <h5 class="mb-0">Dewi Anggraeni</h5>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Saya suka varian pedasnya, rasanya pas tidak terlalu pedas tapi tetap terasa nikmat. Kemasannya juga praktis untuk dibawa traveling."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container py-5">
+            <h2 class="section-title">Hubungi <span class="highlight-text">Kami</span></h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Kirim Pesan</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Alamat Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Nomor Telepon">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Info Kontak</h3>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> Alamat</h5>
+                                <p>Jl. Raya Abon No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-phone me-2 text-primary"></i> Telepon</h5>
+                                <p>+62 838-4911-7711</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-envelope me-2 text-primary"></i> Email</h5>
+                                <p>info@abonpindang.com</p>
+                            </div>
+                            <div>
+                                <h5><i class="fas fa-clock me-2 text-primary"></i> Jam Operasional</h5>
+                                <p>Senin - Jumat: 08.00 - 17.00 WIB</p>
+                                <p>Sabtu: 08.00 - 15.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>Tentang Abon Pindang</h4>
+                    <p>Kami adalah produsen abon pindang berkualitas dengan cita rasa autentik Nusantara. Mengutamakan kualitas dan kesehatan konsumen.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4>Menu</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Tentang</a></li>
+                        <li class="mb-2"><a href="#products" class="text-white text-decoration-none">Produk</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="text-white text-decoration-none">Testimoni</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4>Produk</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Abon Pindang Original</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Abon Pindang Pedas</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Abon Pindang Balado</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Paket Hemat</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h4>Newsletter</h4>
+                    <p>Dapatkan info promo dan produk terbaru langsung ke email Anda.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Alamat Email">
+                            <button class="btn btn-primary" type="submit">Daftar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Abon Pindang. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> by kazuya</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <button class="floating-btn" onclick="window.open('https://wa.me/6283849117711', '_blank')">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)' !important;
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.8)' !important;
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Animation for product cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
